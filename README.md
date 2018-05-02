@@ -3,8 +3,8 @@ An extended brain dump to supplement [this rOpenSci unconf proposal](https://git
 
 # Strategy 1: Storing the Input Data
 
-One of the big challenge of round-trip R markdown is that the compiled document does not neccessarily container
-all of the information in the original.  This is different than, say, Jupyter notebooks, where the input and output of all codeblocks is stored, whether or not they are displayed.  So one needs to store input information (chunks, input files, etc) somewhere in the output file and have a way to re-extract them.  
+One of the big challenge of round-trip R markdown is that the compiled document does not neccessarily contain
+all of the information in the original.  This is different than, say, Jupyter notebooks, where the input and output of all codeblocks is stored, whether or not they are displayed.  So one needs to store input information (chunks, input files, etc) somewhere in the output file and have a way to re-extract them.
 
 If the output file is editable, like Google Docs/Word, you also need some way to deal with the fact that the outputs of code could potentially be modieifed, reconcile somehow if someone makes changes in a code output or input during editing, or protect anything that is an code from being edited at all.  This requires that one somehow tag and differentiate code output and pure text in the output.  This becomes challenging with things in-line text generated from Rmd (e.g., `r round(some_var)`), because it is easy to edit that text and lose its content as well as associated metadata.  
 
